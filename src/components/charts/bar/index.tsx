@@ -1,6 +1,6 @@
 /** @format */
 import * as React from "react";
-import BarChart from "@ant-design/charts/lib/bar";
+import BarChart from "@ant-design/charts/es/plots/bar";
 
 export interface iBarProps {
   options: object;

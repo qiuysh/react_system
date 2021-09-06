@@ -1,7 +1,7 @@
 /** @format */
 
-import React from "react";
-import LineChart from "@ant-design/charts/lib/line";
+import * as React from "react";
+import LineChart from "@ant-design/charts/es/plots/line";
 
 export interface iLineProps {
   options: object;
