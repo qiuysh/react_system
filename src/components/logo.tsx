@@ -10,7 +10,7 @@ export default function Logo({
 }: iProps): JSX.Element {
   return (
     <div className="logo">
-      {collapsed ? "Wo" : "Wolin 3C"}
+      {collapsed ? "Idev" : "Idev Work"}
     </div>
   );
 }

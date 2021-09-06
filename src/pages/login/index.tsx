@@ -35,7 +35,7 @@ const Login: React.FC<ILoginProps> = props => {
   return (
     <div className="login-wrapper">
       <div className="login-form">
-        <h1>Wolin 3C</h1>
+        <h1>Idev Workbench</h1>
         <Form onFinish={e => handleSubmit(e)}>
           <Form.Item name="username">
             <Input
