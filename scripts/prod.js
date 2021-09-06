@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
 const os = require("os");
 
 module.exports = merge(base, {
@@ -35,7 +36,8 @@ module.exports = merge(base, {
             unused: true,
             drop_debugger: true,
             drop_console: true,
-            dead_code: true
+            dead_code: true,
+            reduce_vars: true,
           }
         }
       }),
@@ -44,8 +46,8 @@ module.exports = merge(base, {
     ],
     
     splitChunks: {
-      minSize: 30000,
-      maxSize: 900000,
+      minSize: 100000,
+      maxSize: 300000,
       chunks: "all",
       minChunks: 1,
       maxAsyncRequests: 5,
@@ -80,10 +82,13 @@ module.exports = merge(base, {
   },
 
   plugins: [
+
     new MiniCssExtractPlugin({
       filename: "[name].[chunkhash:8].css",
       chunkFilename: "assets/styles/[name].[chunkhash:8].css"
     }),
+    // 开启 Scope Hoisting
+    new ModuleConcatenationPlugin(),
 
     new webpack.HashedModuleIdsPlugin(), // 实现持久化缓存
   ],

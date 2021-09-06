@@ -157,6 +157,7 @@ module.exports = {
   resolve: {
     modules: ["node_modules"],
     extensions: [".ts", ".tsx", ".js", ".json"],
+    mainFields: ['jsnext:main', 'browser', 'main'],
     alias: {
       "@components": path.join(__dirname, "../src/components"),
       "@pages": path.join(__dirname, "../src/pages"),
