@@ -1,9 +1,10 @@
 /** @format */
-import { createFromIconfontCN } from "@ant-design/icons/lib";
-import Iconfont from "@assets/fonts/iconfont";
 
-// const Iconfont: any = require("@assets/fonts/iconfont");
+import { createFromIconfontCN } from "@ant-design/icons";
 
+const iconfont = require("@assets/fonts/iconfont");
+
+console.log("Iconfont", iconfont);
 export default createFromIconfontCN({
-  scriptUrl: Iconfont,
+  scriptUrl: iconfont,
 });

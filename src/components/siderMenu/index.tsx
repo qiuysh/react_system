@@ -10,7 +10,7 @@ const { Sider } = Layout;
 interface iProps {
   history: any;
   collapsed: boolean;
-  menuList: Array<GLOBAL.iMenuProps>;
+  menuList: Array<GLOBAL.menuItemProps>;
 }
 
 const SiderMenu: React.FC<iProps> = props => {
@@ -27,7 +27,7 @@ const SiderMenu: React.FC<iProps> = props => {
   const initialActiveKey = (): void => {
     if (menuList && menuList.length) {
       const firstActiveMenu:
-        | GLOBAL.iMenuProps
+        | GLOBAL.menuItemProps
         | { code: string } =
         pathname === "/"
           ? menuList[0]
@@ -40,10 +40,8 @@ const SiderMenu: React.FC<iProps> = props => {
 
   const handleClick = (e: any): void => {
     const { key } = e;
-    const targetMenu: GLOBAL.iMenuProps | null =
-      menuList.find(
-        (o: GLOBAL.iMenuProps) => key === o.code,
-      ) || null;
+    const targetMenu: GLOBAL.menuItemProps | null =
+      menuList.find((o: any) => key === o.code) || null;
     if (targetMenu && targetMenu.url) {
       setActive(key);
       push(targetMenu.url);
@@ -60,10 +58,11 @@ const SiderMenu: React.FC<iProps> = props => {
       <Menu
         mode="inline"
         theme="dark"
+        data-testid="test-sider-nav"
         onClick={handleClick}
         selectedKeys={[activeKey]}>
         {menuList.map(
-          (item: GLOBAL.iMenuProps): JSX.Element => {
+          (item: GLOBAL.menuItemProps): JSX.Element => {
             return (
               <Menu.Item key={item.code}>
                 <CustomIcon type={item.icon} />

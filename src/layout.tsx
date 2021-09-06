@@ -20,7 +20,7 @@ import "./assets/styles/global.less";
 
 const { Content } = Layout;
 
-const TITLE: string = "wolin 3C";
+const TITLE: string = "Idev workbench";
 
 const contentStyle: { [key: string]: any } = {
   margin: "24px 24px 0",
@@ -29,9 +29,8 @@ const contentStyle: { [key: string]: any } = {
 
 const BaseLayout: React.FC<any> = props => {
   const { children, history, location } = props;
-  const [collapsed, changeCollapse] = useState<boolean>(
-    false,
-  );
+  const [collapsed, changeCollapse] =
+    useState<boolean>(false);
   const [state, dispatch] = useReducer(
     globalReducer,
     initialState,
