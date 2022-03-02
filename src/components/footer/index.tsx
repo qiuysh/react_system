@@ -1,5 +1,6 @@
 /** @format */
-import * as React from "react";
+
+import React from "react";
 import { Layout } from "antd";
 
 const { Footer } = Layout;

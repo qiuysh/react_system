@@ -1,9 +1,9 @@
 /** @format */
 
 import * as React from "react";
-import LineChart from "@ant-design/charts/es/plots/line";
+import Chart from "@ant-design/charts";
 
-export interface iLineProps {
+export interface LineChartProps {
   options: object;
   data: Array<{
     x: string;
@@ -11,14 +11,14 @@ export interface iLineProps {
   }>;
 }
 
-const Line: React.FC<iLineProps> = props => {
+const Line: React.FC<LineChartProps> = props => {
   const { options, data } = props;
   const config = {
     data,
     xField: "x",
     yField: "y",
   };
-  return <LineChart {...config} />;
+  return <Chart.Line {...config} />;
 };
 
 export default Line;

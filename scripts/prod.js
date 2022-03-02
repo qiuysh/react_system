@@ -11,7 +11,7 @@ module.exports = merge(base, {
 
   mode: "production",
 
-  // devtool: "cheap-module-source-map",
+  devtool: false,
   
   optimization: {
     // runtimeChunk: true,

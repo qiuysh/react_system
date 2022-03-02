@@ -5,18 +5,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin")
 
-const devMode = process.env.NODE_ENV !== "production";
+const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
   entry: {
-    app: path.join(__dirname, "../src/app"),
+    app: path.join(__dirname, "../src/app.tsx"),
   },
 
   output: {
     path: path.join(__dirname, "../dist"),
     publicPath: "/",
-    filename: devMode ? "[name].bundle.js" : "[name].[chunkhash:8].js",
-    chunkFilename: devMode ? "[name].bundle.js" : "[name].chunk_[chunkhash:8].js",
+    filename: !isProd ? "[name].bundle.js" : "[name].[chunkhash:8].js",
+    chunkFilename: !isProd ? "[name].bundle.js" : "[name].chunk_[chunkhash:8].js",
   },
 
   module: {
@@ -35,9 +35,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: path.join(__dirname, "../src"),
+        exclude: /node_modules\/(!antd)/,
         use: [
-          devMode
+          !isProd
             ? "style-loader"
             : MiniCssExtractPlugin.loader,
           "css-loader",
@@ -48,7 +48,7 @@ module.exports = {
         test: /\.less$/,
         exclude: /node_modules\/(!antd)/,
         use: [
-          devMode
+          !isProd
             ? "style-loader"
             : MiniCssExtractPlugin.loader,
           "css-loader",
@@ -64,13 +64,13 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)(\?[tv]=[\d.]+)*$/,
-        include: path.join(__dirname, "../src"),
+        include: path.join(__dirname, "../public"),
         use: [
           {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "assets/images",
+              outputPath: "images",
             }
           },
           {
@@ -102,10 +102,6 @@ module.exports = {
           }
         ],
       },
-      {
-        test: /\.ejs$/,
-        use: ["ejs-loader"],
-      },
     ],
   },
 
@@ -131,23 +127,22 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      title: "wolin 3C",
+      title: "Leekbox",
       filename: "index.html",
       template: path.join(
         __dirname,
         "..",
-        "src",
-        "template.ejs",
+        "public",
+        "index.html",
       ),
       favicon: path.join(
         __dirname,
         "..",
-        "src",
-        "assets",
+        "public",
         "images",
         "favicon.ico",
       ),
-      inject: false,
+      inject: "body",
       minify: true
     }),
 
@@ -162,7 +157,7 @@ module.exports = {
       "@components": path.join(__dirname, "../src/components"),
       "@pages": path.join(__dirname, "../src/pages"),
       "@utils": path.join(__dirname, "../src/utils"),
-      "@assets": path.join(__dirname, "../src/assets"),
+      "@public": path.join(__dirname, "../public"),
     },
   },
 };

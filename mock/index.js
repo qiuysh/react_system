@@ -37,7 +37,7 @@ const proxy = {
           },
           {
             id: 1,
-            name: "表格页",
+            name: "工具",
             path: "/table",
             code: "table",
             icon: "iconmessage",

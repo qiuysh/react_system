@@ -1,20 +1,11 @@
 /**
- * @format
- * @Author: wulin
- * @Date: 2021-03-12 14:24:26
- * @LastEditors: wulin
- * @LastEditTime: 2021-04-23 15:12:07
- * @Description: xxxx
- * @FilePath: /react_system/src/utils/util.ts
- */
-
-/** @format */
-
-/**
  * 验证是否登录
+ *
+ * @format
  * @param nextState
  * @param replace
  */
+
 export function isLogined(nextState: any, replace: any) {
   if (!loggedIn()) {
     replace({
@@ -23,7 +14,7 @@ export function isLogined(nextState: any, replace: any) {
   }
 }
 
-export function loggedIn() {
+export function loggedIn(): boolean {
   return !!localStorage.token;
 }
 

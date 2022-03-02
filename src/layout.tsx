@@ -16,11 +16,11 @@ import ErrorBoundary from "@components/errorBoundary";
 import { getViewPortHeight } from "@utils/util";
 import { initialState, globalReducer } from "./stores";
 import * as ajax from "./services";
-import "./assets/styles/global.less";
+import "@public/styles/global.less";
 
 const { Content } = Layout;
 
-const TITLE: string = "Idev workbench";
+const TITLE: string = "Leekbox workbench";
 
 const contentStyle: { [key: string]: any } = {
   margin: "24px 24px 0",
@@ -58,7 +58,8 @@ const BaseLayout: React.FC<any> = props => {
         <Layout
           className={classnames("", {
             "layout-fixed": true,
-          })}>
+          })}
+        >
           <SiderMenu
             collapsed={collapsed}
             history={history}

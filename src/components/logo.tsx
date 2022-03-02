@@ -1,6 +1,6 @@
 /** @format */
 
-import * as React from "react";
+import React from "react";
 
 export interface iProps {
   collapsed: boolean;
@@ -10,7 +10,7 @@ export default function Logo({
 }: iProps): JSX.Element {
   return (
     <div className="logo">
-      {collapsed ? "Idev" : "Idev Work"}
+      {collapsed ? "Leek" : "Leek Box"}
     </div>
   );
 }

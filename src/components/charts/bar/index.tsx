@@ -1,8 +1,8 @@
 /** @format */
 import * as React from "react";
-import BarChart from "@ant-design/charts/es/plots/bar";
+import Chart from "@ant-design/charts";
 
-export interface iBarProps {
+export interface BarChartProps {
   options: object;
   data: Array<{
     x: string;
@@ -10,14 +10,14 @@ export interface iBarProps {
   }>;
 }
 
-const Bar: React.FC<iBarProps> = props => {
+const Bar: React.FC<BarChartProps> = props => {
   const { options, data } = props;
   const config = {
     data,
     xField: "x",
     yField: "y",
   };
-  return <BarChart {...config} />;
+  return <Chart.Bar {...config} />;
 };
 
 export default Bar;

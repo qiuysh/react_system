@@ -5,7 +5,7 @@ import FallOutlined from "@ant-design/icons/FallOutlined";
 import RiseOutlined from "@ant-design/icons/RiseOutlined";
 import "../style.less";
 
-export interface iFlipCardProps {
+export interface FlipCardProps {
   options: {
     title: string;
     precision?: number;
@@ -19,7 +19,7 @@ export interface iFlipCardProps {
   };
 }
 
-const FlipCard: React.FC<iFlipCardProps> = props => {
+const FlipCard: React.FC<FlipCardProps> = props => {
   const { options, data } = props;
   const { title, precision, isMom } = options;
   const { value, prefix, suffix } = data;
