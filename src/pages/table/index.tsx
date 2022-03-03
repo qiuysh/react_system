@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { useEffect, useState } from "react";
 import {
   Table,
@@ -28,23 +26,18 @@ interface iDataSourceStats {
 }
 
 const CustemTable: React.FC<any> = props => {
-  const [
-    reqParams,
-    changeParam,
-  ] = useState<iReqParamsStates>({
-    page: 1,
-    size: 10,
-  });
-  const [
-    dataSource,
-    getDataSource,
-  ] = useState<iDataSourceStats>({
-    data: [],
-    total: 0,
-  });
-  const [loading, changeStatusLoading] = useState<boolean>(
-    false,
-  );
+  const [reqParams, changeParam] =
+    useState<iReqParamsStates>({
+      page: 1,
+      size: 10,
+    });
+  const [dataSource, getDataSource] =
+    useState<iDataSourceStats>({
+      data: [],
+      total: 0,
+    });
+  const [loading, changeStatusLoading] =
+    useState<boolean>(false);
 
   const pagination: PaginationProps = {
     current: reqParams.page,
@@ -84,7 +77,7 @@ const CustemTable: React.FC<any> = props => {
       width: 150,
       render: (
         text: unknown,
-        record: object,
+        record: object
       ): JSX.Element => {
         return (
           <div>
@@ -118,7 +111,7 @@ const CustemTable: React.FC<any> = props => {
   const changeTablePage = (
     pagination: any,
     filters: any,
-    sorter: any,
+    sorter: any
   ): void => {
     reqParams.page = pagination.current;
     changeParam(reqParams);
@@ -131,7 +124,8 @@ const CustemTable: React.FC<any> = props => {
         <Button key="1" type="primary">
           新增
         </Button>,
-      ]}>
+      ]}
+    >
       <Table
         rowKey="id"
         loading={loading}

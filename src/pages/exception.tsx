@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react";
 import { Result, Button } from "antd";
 import { ResultProps } from "antd/lib/result";
@@ -26,9 +24,8 @@ type IExceptionProps = {
 const PageException: React.FC<IExceptionProps> = props => {
   const { match } = props;
   const { params } = match;
-  const resultProps: ResultProps = getExceptionStatus(
-    params,
-  );
+  const resultProps: ResultProps =
+    getExceptionStatus(params);
   return <Result {...resultProps} />;
 };
 

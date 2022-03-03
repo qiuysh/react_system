@@ -1,5 +1,3 @@
-/** @format */
-
 import { updateChain } from "immutability-helper-x";
 
 export const initialState: GLOBAL.storeProps = {
@@ -8,7 +6,7 @@ export const initialState: GLOBAL.storeProps = {
 
 export const globalReducer = (
   state: any,
-  action: { type: string; payload: { [key: string]: any } },
+  action: { type: string; payload: { [key: string]: any } }
 ) => {
   const { type, payload } = action;
   switch (type) {

@@ -1,5 +1,3 @@
-/** @format */
-
 import * as React from "react";
 import { Layout } from "antd";
 import MenuFoldOutlined from "@ant-design/icons/MenuFoldOutlined";
@@ -25,7 +23,8 @@ const TopNav: React.FC<iProps> = props => {
     <Header className="yux-header">
       <a
         className="trigger"
-        onClick={() => changeCollapse(!collapsed)}>
+        onClick={() => changeCollapse(!collapsed)}
+      >
         {trigger}
       </a>
       <UseBar />

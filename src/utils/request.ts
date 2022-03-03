@@ -1,5 +1,3 @@
-/** @format */
-
 import axios, {
   AxiosRequestConfig,
   AxiosResponse,
@@ -7,13 +5,9 @@ import axios, {
 } from "axios";
 import { message } from "antd";
 
-const isMock = process.env.FIRST_ENV === "mock";
-
-console.log(process);
-
 export default function request(
   url: string,
-  options: AxiosRequestConfig = {},
+  options: AxiosRequestConfig = {}
 ): AxiosPromise {
   // 请求拦截器
   axios.interceptors.request.use(
@@ -27,12 +21,11 @@ export default function request(
     },
     error => {
       Promise.reject(error);
-    },
+    }
   );
   // 使用由库提供的配置的默认值来创建实例
   return axios({
     url,
-    baseURL: isMock ? "/mock" : "",
     method: "get", // 默认值
     headers: {
       "content-type": "application/json;charset=UTF-8",
@@ -70,7 +63,7 @@ export default function request(
         response || {
           ...error,
           status: 600,
-        },
+        }
       );
 
       let msg: string;
@@ -124,6 +117,6 @@ function tipError(res: AxiosResponse) {
   }
   console.error(
     "http返回结果的 status 码错误，错误信息是:",
-    res,
+    res
   );
 }

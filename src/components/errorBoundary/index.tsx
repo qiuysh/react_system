@@ -1,4 +1,3 @@
-/** @format */
 import * as React from "react";
 import { Result } from "antd";
 import { isEqual } from "lodash-es";
@@ -23,7 +22,7 @@ export default class ErrorBoundary extends React.Component<
       hasError &&
       !isEqual(
         location.pathname,
-        prevProps.location.pathname,
+        prevProps.location.pathname
       )
     ) {
       this.setState({

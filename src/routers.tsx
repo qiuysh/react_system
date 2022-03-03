@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { lazy, Suspense } from "react";
 import LoadingOutlined from "@ant-design/icons/LaptopOutlined";
 import {

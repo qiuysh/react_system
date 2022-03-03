@@ -1,5 +1,3 @@
-/** @format */
-
 import * as React from "react";
 import { Modal, Avatar, Menu, Switch } from "antd";
 import BellOutlined from "@ant-design/icons/BellOutlined";
@@ -42,7 +40,7 @@ function onChange(checked: boolean): void {
   const htmlNode: any = document.querySelector("html");
   htmlNode.setAttribute(
     "ui-theme-mode",
-    checked ? "light" : "dark",
+    checked ? "light" : "dark"
   );
 }
 

@@ -1,4 +1,4 @@
-/** @format */
+
 
 const Mock = require("mockjs");
 const delay = require("mocker-api/utils/delay");

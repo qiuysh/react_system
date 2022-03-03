@@ -1,7 +1,5 @@
-/** @format */
-
-import * as React from "react";
-import Chart from "@ant-design/charts";
+import React from "react";
+import * as Chart from "@ant-design/charts";
 
 export interface LineChartProps {
   options: object;

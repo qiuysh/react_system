@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react";
 import {
   Form,
@@ -54,7 +52,8 @@ const FormComponent: React.FC<IFormProps> = props => {
         <Form.Item
           label="状态"
           name="status"
-          initialValue="success">
+          initialValue="success"
+        >
           <Radio.Group>
             <Radio value="success">成功</Radio>
             <Radio value="warning">异常</Radio>

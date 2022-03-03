@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react";
 import {
   Form,
@@ -67,7 +65,8 @@ const Login: React.FC<ILoginProps> = props => {
               type="primary"
               htmlType="submit"
               className="btn btn-priame"
-              block>
+              block
+            >
               登录
             </Button>
             {/* <a>注册</a> */}

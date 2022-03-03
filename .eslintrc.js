@@ -18,10 +18,10 @@ module.exports = {
       pragma: "React",
       version: "detect"
     },
-    "import/extensions": [".js", ".ts", ".tsx"],
+    "import/extensions": [".js", ".ts", ".jsx", ".tsx"],
     "import/resolver": {
       webpack: {
-        config: "./scripts/base.js",
+        config: "./two.config.js",
       },
     },
   },
@@ -54,6 +54,15 @@ module.exports = {
     "no-restricted-globals": "warn",
     "yoda": "off",
     "prefer-destructuring": "warn",
+    "import/extensions": [
+      "warn",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/newline-after-import": "warn",
     "import/prefer-default-export": "warn",
     "import/order": "warn",

@@ -1,5 +1,3 @@
-/** @format */
-
 import React, {
   useState,
   useEffect,
@@ -9,14 +7,14 @@ import { Layout } from "antd";
 import { withRouter } from "react-router-dom";
 import DocumentTitle from "react-document-title";
 import classnames from "classnames";
-import TopNav from "@components/topNav";
-import SiderMenu from "@components/siderMenu";
-import Footer from "@components/footer";
-import ErrorBoundary from "@components/errorBoundary";
-import { getViewPortHeight } from "@utils/util";
+import TopNav from "@/components/topNav";
+import SiderMenu from "@/components/siderMenu";
+import Footer from "@/components/footer";
+import ErrorBoundary from "@/components/errorBoundary";
+import { getViewPortHeight } from "@/utils/util";
 import { initialState, globalReducer } from "./stores";
 import * as ajax from "./services";
-import "@public/styles/global.less";
+import "public/styles/global.less";
 
 const { Content } = Layout;
 
@@ -33,7 +31,7 @@ const BaseLayout: React.FC<any> = props => {
     useState<boolean>(false);
   const [state, dispatch] = useReducer(
     globalReducer,
-    initialState,
+    initialState
   );
   const { menuList } = state as GLOBAL.storeProps;
 

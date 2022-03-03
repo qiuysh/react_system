@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { useState, useEffect } from "react";
 import { Row, Col, message } from "antd";
 import ChartPanel from "./chartPanel";
@@ -23,19 +21,17 @@ interface iDashboardState {
 }
 
 const DashBoard: React.FC<any> = props => {
-  const [
-    dataSource,
-    getDashData,
-  ] = useState<iDashboardState>({
-    line: [],
-    bar: [],
-    flipcard: {
-      sales: 0,
-      grate: 0,
-      reduce: 0,
-      customers: 0,
-    },
-  });
+  const [dataSource, getDashData] =
+    useState<iDashboardState>({
+      line: [],
+      bar: [],
+      flipcard: {
+        sales: 0,
+        grate: 0,
+        reduce: 0,
+        customers: 0,
+      },
+    });
   const { line, bar, flipcard } = dataSource;
 
   useEffect(() => {

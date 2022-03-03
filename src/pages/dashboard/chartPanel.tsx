@@ -1,8 +1,6 @@
-/** @format */
-
 import React from "react";
 import { Card } from "antd";
-import { Flipper, Bar, Line } from "@components/charts";
+import { Flipper, Bar, Line } from "@/components/charts";
 
 type dataArray = {
   data: Array<{

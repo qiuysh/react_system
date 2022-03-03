@@ -1,5 +1,4 @@
-/** @format */
-import * as React from "react";
+import React from "react";
 import { Statistic } from "antd";
 import FallOutlined from "@ant-design/icons/FallOutlined";
 import RiseOutlined from "@ant-design/icons/RiseOutlined";

@@ -1,6 +1,4 @@
-/** @format */
-
-import * as React from "react";
+import React from "react";
 import { Menu, Layout } from "antd";
 import Logo from "../logo";
 
@@ -69,7 +67,7 @@ const SiderMenu: React.FC<iProps> = props => {
                 <span>{item.name}</span>
               </Menu.Item>
             );
-          },
+          }
         )}
       </Menu>
     </Sider>
