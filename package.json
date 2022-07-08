@@ -39,7 +39,7 @@
     "history": "^4.10.1",
     "immutability-helper-x": "^1.0.5",
     "lodash-es": "^4.17.21",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "prop-types": "^15.7.2",
     "qs": "^6.9.6",
     "react": "^16.11.0",
